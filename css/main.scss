@@ -1,0 +1,259 @@
+$colors: (
+  foreground: hsl(256, 26%, 20%),
+  grayText: hsl(273, 4%, 51%),
+  dark_Violet: hsl(270, 9%, 17%), 
+  whiteText: #fff,
+  lightGray: hsl(0, 0%, 98%),
+);
+
+$font: 'DM Serif Display', 'sans'; 
+$font-default: 16px;
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
+
+body {
+  font-family: $font;
+  font-size: $font-default;
+  margin: 0;
+  padding: 0;
+
+}
+
+header {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: color(dark_Violet)
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    li {
+      margin: 0 0 0 20px;
+      list-style-type: none;
+      color: color(grayText);
+
+      button {
+        margin: 0 0 0 20px;
+        padding: 15px 30px;
+        border: none;
+        color: #fff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: color(dark_Violet);
+      }
+    }
+
+    li:hover {
+      color: color(dark_Violet);
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  height: 1000px;
+
+  #foreground {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 65%);
+    background-color: color(foreground);
+    height: 1000px;
+    width: 100%;
+    z-index: -2;
+    position: absolute;
+    top: 77px;
+  }
+
+  #pattern {
+    right: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #pattern2 {
+    position: absolute;
+    top: 600px;
+    z-index: 1;
+  }
+
+  .main-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 0 0 0;
+  }
+
+  #note, #img-family {
+    padding: 10px;
+  }
+
+  #note {
+    max-width: 600px;
+    height: 600px;
+    z-index: 2;
+  }
+
+  #img-family {
+    z-index: -2;
+  }
+  
+  h2 {
+    font-size: 77px;
+    color: color(whiteText);
+    line-height: 70px;
+    letter-spacing: 6px;
+    margin: 0;
+  }
+
+  input {
+    padding: 12px 30px;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: color(whiteText);
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+}
+
+section {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#features {
+
+  h1 {
+    font-size: 66px;
+    color: color(grayText);
+    letter-spacing: 3px;
+  }
+
+  #features-container {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      color: color(dark_Violet);
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      letter-spacing: 1px;
+    }
+
+    div {
+      padding: 0 10px;
+      color: color(grayText)
+    }
+  }
+}
+
+#more-info-work {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: color(foreground);
+  margin-top: 200px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  #pattern3 {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+
+  #pattern3 img {
+    z-index: -1;
+  }
+
+  h1 {
+    color: color(whiteText);
+    font-size: 66px;
+    width: 50%;
+  }
+
+  input {
+    background-color: color(lightGray);
+    border: none;
+    padding: 15px 40px;
+    font-size: $font-default;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: color(dark_Violet);
+    cursor: pointer;
+  }
+}
+
+footer {
+  background-color: color(lightGray);
+  margin-top: 200px;
+
+  #social-medias {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0 10px 0;
+    border-bottom: 1px solid hsl(0, 9%, 91%);
+
+    ul {
+      display: flex;
+      
+      
+      li {
+        list-style-type: none;
+        padding: 0 15px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  section {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 50px 0;
+
+    div {
+      text-align: start;
+    }
+
+    h3 {
+      color: color(grayText);
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style-type: none;
+      text-transform: uppercase;
+      padding-inline-start: 0;
+
+
+      li {
+        line-height: 40px;
+        margin: 0;
+      }
+    }
+  }
+}
